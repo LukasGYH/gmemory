@@ -16,6 +16,21 @@ Answer natural language questions by searching, reading, and synthesizing
 content from across the `gmemory/` knowledge workspace. Treat the vault as the user's
 personal knowledge base to query against.
 
+## Directory language
+
+The vault may use Chinese or English directory names. When the user specifies
+a scope (e.g., "in my learning notes"), resolve it against whichever variant
+exists:
+
+| Chinese | English |
+|---------|---------|
+| 学习/ | notes/ |
+| 索引/ | index/ |
+| 项目/ | projects/ |
+| 收件箱/ | inbox/ |
+
+Search both variants when the scope is ambiguous.
+
 ## Before you begin
 
 1. Read `笔记规范.md` to understand the vault's structure and conventions.

@@ -27,7 +27,10 @@ Web Clipper ──→ gmemory/Clippings/
 cp -r skills/* /path/to/your/project/.claude/skills/
 
 # 2. 在工作区根目录创建 gmemory 子目录结构
-mkdir -p gmemory/{Clippings,收件箱,学习/concepts,索引,项目,附件}
+mkdir -p gmemory/{Clippings,收件箱,学习/concepts,索引,项目,附件,conflict}
+
+# 或使用英文目录名:
+# mkdir -p gmemory/{Clippings,inbox,notes/concepts,index,projects,attachments,conflicts}
 
 # 3. 重新加载插件
 # 在 Claude Code 中执行: /reload-plugins
@@ -62,13 +65,16 @@ mkdir -p gmemory/{Clippings,收件箱,学习/concepts,索引,项目,附件}
 ```
 gmemory/
 ├── Clippings/          # Web Clipper 保存的原始剪藏
-├── 收件箱/             # remember / import 写入的碎片
-├── 学习/               # 知识笔记
+├── 收件箱/  (inbox)    # remember / import 写入的碎片
+├── 学习/    (notes)    # 知识笔记
 │   └── concepts/       # Compile 自动创建的概念页
-├── 索引/               # MOC (Map of Content) 主题索引
-├── 项目/               # 按项目归类的笔记
+├── 索引/    (index)    # MOC (Map of Content) 主题索引
+├── 项目/    (projects) # 按项目归类的笔记
+├── conflict/           # 语义冲突记录（团队协作）
 └── 附件/               # 图片、PDF
 ```
+
+> 中文和英文目录名等效。Skills 会自动检测并适配已有目录。
 
 ## 原理
 
@@ -129,8 +135,9 @@ gmemory/学习/JDK ZGC 分代模式.md  (tags: java, jdk, 性能, status: 草稿
 
 ## 依赖
 
-- Claude Code（或任何支持 Skill 的 Claude 运行环境）
-- 基础文件系统工具（Grep, Glob, Read, Edit, Write）
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code)（SKILL.md 指令目前为 Claude Code 专属，Grep、Glob、Read、Edit、Write 等均为其内置工具）
+
+> 数据格式层是通用的：`gmemory/` 内的 `.md` 文件、三行碎片格式、frontmatter 规范，任何 agent 都能直接读写。换用其他 agent 时，只需为它编写等价的 Skill/指令文件，底层的知识数据和目录结构无需改变。
 
 ## License
 

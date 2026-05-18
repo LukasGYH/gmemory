@@ -15,6 +15,24 @@ description: >
 Convert raw Obsidian Web Clipper output into polished vault notes that follow
 the conventions in [[笔记规范]].
 
+## Directory language
+
+This skill supports bilingual directory structures. On first access, detect
+which language the vault uses by checking for existing directories:
+
+| Chinese | English | Purpose |
+|---------|---------|---------|
+| `gmemory/收件箱/` | `gmemory/inbox/` | Incoming fragments |
+| `gmemory/学习/` | `gmemory/notes/` | Notes and learning content |
+| `gmemory/学习/concepts/` | `gmemory/notes/concepts/` | Concept notes |
+| `gmemory/索引/` | `gmemory/index/` | MOCs and indexes |
+| `gmemory/项目/` | `gmemory/projects/` | Project-specific notes |
+| `gmemory/conflict/` | `gmemory/conflicts/` | Semantic conflicts |
+
+Rule: check which variant exists and use it for all operations. If both exist,
+prefer Chinese. If neither exists, create the Chinese variant (backward compatible).
+`gmemory/Clippings/` is English-only — it matches the Obsidian Web Clipper default.
+
 ## Before you begin
 
 1. Read `笔记规范.md` to refresh yourself on the vault's frontmatter and

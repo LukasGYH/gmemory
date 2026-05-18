@@ -15,6 +15,23 @@ description: >
 Audit the `gmemory/` knowledge workspace for structural issues and produce an actionable health
 report. Follows the standards defined in [[笔记规范]].
 
+## Directory language
+
+The vault may use Chinese or English directory names. Detect the language
+by checking which variant exists, and use it consistently in all reports:
+
+| Chinese | English | Purpose |
+|---------|---------|---------|
+| `gmemory/收件箱/` | `gmemory/inbox/` | Incoming fragments |
+| `gmemory/学习/` | `gmemory/notes/` | Notes and learning content |
+| `gmemory/学习/concepts/` | `gmemory/notes/concepts/` | Concept notes |
+| `gmemory/索引/` | `gmemory/index/` | MOCs and indexes |
+| `gmemory/项目/` | `gmemory/projects/` | Project-specific notes |
+| `gmemory/conflict/` | `gmemory/conflicts/` | Semantic conflicts |
+
+If both variants exist, report paths using whichever is primary (Chinese takes
+precedence).
+
 ## Before you begin
 
 1. Read `笔记规范.md` to confirm the current frontmatter and naming

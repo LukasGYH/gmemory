@@ -29,7 +29,10 @@ Web Clipper ──→ gmemory/Clippings/
 cp -r skills/* /path/to/your/project/.claude/skills/
 
 # 2. Create the gmemory directory structure at workspace root
-mkdir -p gmemory/{Clippings,Inbox,Learning/concepts,Indexes,Projects,Attachments}
+mkdir -p gmemory/{Clippings,收件箱,学习/concepts,索引,项目,附件,conflict}
+
+# Or with English directory names:
+# mkdir -p gmemory/{Clippings,inbox,notes/concepts,index,projects,attachments,conflicts}
 
 # 3. Reload plugins
 # In Claude Code: /reload-plugins

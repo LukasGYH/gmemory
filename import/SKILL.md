@@ -1,7 +1,7 @@
 ---
 name: import
 description: >
-  Batch import external knowledge into gmemory/收件箱/ for the Ingest → Compile pipeline.
+  Batch import external knowledge into gmemory/收件箱/ (or gmemory/inbox/) for the Ingest → Compile pipeline.
   ALWAYS trigger when the user says "import", "导入", "import my notes", "import chat",
   "import conversations", "导入记忆", "导入笔记", "import this", or mentions external
   files to import. Handles chat exports (ChatGPT, Claude, Gemini), unstructured .md
@@ -11,8 +11,14 @@ description: >
 
 # Import（导入）
 
-Normalize external knowledge into `gmemory/收件箱/` fragments for the Ingest →
+Normalize external knowledge into `gmemory/收件箱/` (or `gmemory/inbox/`) fragments for the Ingest →
 Compile pipeline. Handles any format.
+
+## Directory language
+
+This skill supports bilingual directories. On first use, check which exists:
+`gmemory/收件箱/` (Chinese) or `gmemory/inbox/` (English). Use whichever exists.
+If neither exists, create `gmemory/收件箱/` (backward compatible).
 
 ## Philosophy
 
@@ -58,9 +64,9 @@ via Query.
 3. Skip fragments already covered in existing notes
 4. Report what was skipped and why
 
-### Step 4: Write to gmemory/收件箱/
+### Step 4: Write to inbox
 
-Same lightweight format as `remember`:
+Same lightweight format as `remember`. Target the inbox directory (`gmemory/收件箱/` or `gmemory/inbox/`):
 
 ```markdown
 # <short title>

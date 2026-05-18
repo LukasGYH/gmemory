@@ -1,7 +1,7 @@
 ---
 name: remember
 description: >
-  Capture working memory fragments into gmemory/收件箱/. ALWAYS trigger when the user says
+  Capture working memory fragments into gmemory/收件箱/ (or gmemory/inbox/). ALWAYS trigger when the user says
   "remember", "记住", "记一下", "note this", "make a note", "save this for later",
   "记录下来", "mark this", or wants to save a quick insight, tip, or lesson learned
   during a working session. Also trigger on casual mentions like "this is important,
@@ -11,8 +11,14 @@ description: >
 
 # Remember（记忆碎片）
 
-Capture working insights as lightweight fragments in `gmemory/收件箱/`.
+Capture working insights as lightweight fragments in `gmemory/收件箱/` (or `gmemory/inbox/`).
 These fragments will be processed later by Ingest → Compile.
+
+## Directory language
+
+This skill supports bilingual directories. On first use, check which exists:
+`gmemory/收件箱/` (Chinese) or `gmemory/inbox/` (English). Use whichever exists.
+If neither exists, create `gmemory/收件箱/` (backward compatible).
 
 ## Philosophy
 
@@ -24,7 +30,7 @@ fragments into proper notes.
 
 ## Fragment format
 
-Each fragment is a minimal `.md` file in `gmemory/收件箱/`. Only three parts:
+Each fragment is a minimal `.md` file saved to the inbox directory (`gmemory/收件箱/` or `gmemory/inbox/` — see Directory language above). Only three parts:
 
 ```markdown
 # <short title>
@@ -45,9 +51,9 @@ Tags are comma-separated for easy typing (Ingest converts to list format).
 1. Parse what the user wants to remember from context
 2. Write a single-sentence summary — clear enough to understand weeks later
 3. Assign 1-3 tags based on the topic
-4. Save to `gmemory/收件箱/` with the date-title filename
+4. Save to the inbox directory (`gmemory/收件箱/` or `gmemory/inbox/`) with the date-title filename
 5. Confirm: "已记住: <summary>" — one line, no ceremony
-6. If 5+ fragments in `gmemory/收件箱/`, suggest: "收件箱有 N 条碎片，要跑 /ingest 吗？"
+6. If 5+ fragments in the inbox, suggest: "收件箱有 N 条碎片，要跑 /ingest 吗？"
 
 ## Examples
 

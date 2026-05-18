@@ -137,8 +137,9 @@ gmemory/Learning/JDK ZGC Generational Mode.md  (tags: java, jdk, performance, st
 
 ## Dependencies
 
-- Claude Code (or any Claude runtime with Skill support)
-- Basic filesystem tools (Grep, Glob, Read, Edit, Write)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (the SKILL.md instructions currently target Claude Code; tools like Grep, Glob, Read, Edit, Write are its built-in primitives)
+
+> The data layer is universal: `.md` files under `gmemory/`, the 3-line fragment format, and the frontmatter conventions are readable/writable by any agent. To switch agents, you only need to write equivalent Skill/instruction files for that platform — the underlying knowledge data and directory structure remain unchanged.
 
 ## License
 

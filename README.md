@@ -66,14 +66,17 @@ mkdir -p gmemory/{Clippings,收件箱,学习/concepts,索引,项目,附件,confl
 
 ```
 gmemory/
-├── Clippings/          # Raw clips saved by Web Clipper
-├── Inbox/              # Fragments written by remember / import
-├── Learning/           # Knowledge notes
-│   └── concepts/       # Auto-generated concept pages by Compile
-├── Indexes/            # MOC (Map of Content) topic indexes
-├── Projects/           # Notes organized by project
-└── Attachments/        # Images, PDFs
+├── Clippings/               # Raw clips saved by Web Clipper
+├── 收件箱/  (inbox)          # Fragments written by remember / import
+├── 学习/    (notes)          # Knowledge notes
+│   └── concepts/            # Auto-generated concept pages by Compile
+├── 索引/    (index)          # MOC (Map of Content) topic indexes
+├── 项目/    (projects)       # Notes organized by project
+├── conflict/ (conflicts)    # Semantic conflict records (team collaboration)
+└── 附件/                     # Images, PDFs
 ```
+
+> Chinese and English directory names are equivalent. Skills auto-detect and adapt to whichever exists.
 
 ## Design
 
